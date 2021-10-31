@@ -56,10 +56,11 @@ func Dao(querySql string) error {
 func main() {
 	querySql := "this is a executable sql"
 	err := Dao(querySql)
-	if err != nil {
-		fmt.Println(err)
-	} else {
+	if err == nil {
 		fmt.Println("sql exec succ")
+		return
+	} else {
+		fmt.Println(err)
 	}
 	fmt.Println(SEPARATOR_LINE)
 
