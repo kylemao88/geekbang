@@ -54,7 +54,7 @@ ifeq ($(DEBUG),Y)
 endif
 
 # module list
-MODS = second
+MODS = second third
 # unittest files
 UNITTEST_FILES = coverprofile.cov report.out cover.html test_result*
 
