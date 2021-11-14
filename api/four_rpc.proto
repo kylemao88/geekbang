@@ -1,0 +1,35 @@
+// this is for four work
+syntax = "proto3";
+package four;
+//option go_package = "git.code.oa.com/gongyi/geekbang/api";
+//option go_package = ".";
+
+
+//import "common_meta.proto";
+
+///  resp head
+message CommonHeader {
+    string msg = 1;
+    int32 code = 2;
+    int64 op_time = 3;
+}
+
+// 查询UserInfo
+message QueryUserRequest{
+    string uid = 1;
+}
+
+message QueryUserResponse{
+    enum Status {
+        SUCCESS = 0;
+        INTERNAL_ERROR = 1;
+    }
+    CommonHeader header = 1;
+    User user = 2;
+}
+
+message User{
+    string nick = 1;
+    string head = 2;
+    string uid  = 3;
+}

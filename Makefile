@@ -28,10 +28,18 @@ BRANCH_NAME ?= $(shell git -C . rev-parse --abbrev-ref HEAD | grep -v HEAD || gi
 # build dir
 BIN_DIR = $(CURDIR)/build
 
+
 # printf config
 V = 0
 Q = $(if $(filter 1,$V),,@)
 M = $(shell printf "\033[34;1m▶\033[0m")
+
+# pb config
+PROTOCOL_DIR = ./api
+PROTO_RPC_FILES = $(shell find ${PROTOCOL_DIR} -name *rpc.proto)
+PROTO_RPC_GO = $(patsubst %.proto,%.pb.go,$(PROTO_RPC_FILES))
+PROTO_FLAGS = --go_out=paths=source_relative:
+PROTO_RPC_FLAGS = --go_out=plugins=grpc,paths=source_relative:
 
 
 # build flag
@@ -54,7 +62,7 @@ ifeq ($(DEBUG),Y)
 endif
 
 # module list
-MODS = second third
+MODS = second third four
 # unittest files
 UNITTEST_FILES = coverprofile.cov report.out cover.html test_result*
 
@@ -71,12 +79,20 @@ unittest: create_errors
 	$Q zip -q test_result.zip  test_result/*
 
 .PHONY: $(MODS)
-$(MODS): $(BIN); $(info $(M) building executable $@) @ ## Build program binary
+$(MODS): protos $(BIN); $(info $(M) building executable $@) @ ## Build program binary
 	$Q go build $(BLD_FLAGS) -o $(BIN_DIR)/$@/$@ cmd/$@/*.go
 
 
 $(BIN):
 	@mkdir -p $@
+
+
+.PHONY: protos $(info $(M) building protos $@) @
+protos: $(PROTO_RPC_GO)
+        $(info $(M) building pb ok)
+
+$(PROTO_RPC_GO): %.pb.go: %.proto ;
+        $Q protoc -I $(<D) -I $(PROTO_RPC_FLAGS)$(@D) $<
 
 
 .PHONY: fmt
