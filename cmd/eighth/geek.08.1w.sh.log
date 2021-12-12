@@ -1,0 +1,184 @@
+used_memory:2590992864
+SET: -nan====== SET ======
+  10000 requests completed in 0.22 seconds
+  50 parallel clients
+  10 bytes payload
+  keep alive: 1
+
+44.93% <= 1 milliseconds
+93.60% <= 2 milliseconds
+100.00% <= 2 milliseconds
+45045.04 requests per second
+
+GET: 36962.96====== GET ======
+  10000 requests completed in 0.25 seconds
+  50 parallel clients
+  10 bytes payload
+  keep alive: 1
+
+35.67% <= 1 milliseconds
+85.22% <= 2 milliseconds
+100.00% <= 2 milliseconds
+40160.64 requests per second
+
+
+used_memory:2591484008
+SET: 0.00====== SET ======
+  10000 requests completed in 0.24 seconds
+  50 parallel clients
+  20 bytes payload
+  keep alive: 1
+
+40.93% <= 1 milliseconds
+85.01% <= 2 milliseconds
+99.87% <= 3 milliseconds
+99.96% <= 4 milliseconds
+99.99% <= 5 milliseconds
+100.00% <= 18 milliseconds
+41152.26 requests per second
+
+GET: 30285.71====== GET ======
+  10000 requests completed in 0.21 seconds
+  50 parallel clients
+  20 bytes payload
+  keep alive: 1
+
+55.26% <= 1 milliseconds
+91.45% <= 2 milliseconds
+100.00% <= 2 milliseconds
+47393.37 requests per second
+
+
+used_memory:2591771584
+SET: -nan====== SET ======
+  10000 requests completed in 0.23 seconds
+  50 parallel clients
+  50 bytes payload
+  keep alive: 1
+
+39.15% <= 1 milliseconds
+92.07% <= 2 milliseconds
+99.98% <= 3 milliseconds
+100.00% <= 3 milliseconds
+42735.04 requests per second
+
+GET: 36785.71====== GET ======
+  10000 requests completed in 0.24 seconds
+  50 parallel clients
+  50 bytes payload
+  keep alive: 1
+
+36.63% <= 1 milliseconds
+90.64% <= 2 milliseconds
+99.98% <= 3 milliseconds
+100.00% <= 3 milliseconds
+42194.09 requests per second
+
+
+used_memory:2591648792
+SET: 0.00====== SET ======
+  10000 requests completed in 0.25 seconds
+  50 parallel clients
+  100 bytes payload
+  keep alive: 1
+
+32.59% <= 1 milliseconds
+89.44% <= 2 milliseconds
+99.99% <= 3 milliseconds
+100.00% <= 3 milliseconds
+40000.00 requests per second
+
+GET: -nan====== GET ======
+  10000 requests completed in 0.24 seconds
+  50 parallel clients
+  100 bytes payload
+  keep alive: 1
+
+44.32% <= 1 milliseconds
+84.42% <= 2 milliseconds
+100.00% <= 3 milliseconds
+41666.67 requests per second
+
+
+used_memory:2591853448
+SET: 0.00SET: 38601.59====== SET ======
+  10000 requests completed in 0.26 seconds
+  50 parallel clients
+  200 bytes payload
+  keep alive: 1
+
+38.20% <= 1 milliseconds
+81.24% <= 2 milliseconds
+99.88% <= 3 milliseconds
+99.89% <= 4 milliseconds
+99.92% <= 6 milliseconds
+99.93% <= 10 milliseconds
+99.94% <= 11 milliseconds
+99.95% <= 15 milliseconds
+99.97% <= 16 milliseconds
+100.00% <= 16 milliseconds
+38610.04 requests per second
+
+====== GET ======
+  10000 requests completed in 0.23 seconds
+  50 parallel clients
+  200 bytes payload
+  keep alive: 1
+
+44.99% <= 1 milliseconds
+91.28% <= 2 milliseconds
+100.00% <= 2 milliseconds
+43668.12 requests per second
+
+
+used_memory:2592019336
+SET: -nan====== SET ======
+  10000 requests completed in 0.23 seconds
+  50 parallel clients
+  1000 bytes payload
+  keep alive: 1
+
+45.14% <= 1 milliseconds
+90.31% <= 2 milliseconds
+99.99% <= 4 milliseconds
+100.00% <= 9 milliseconds
+44247.79 requests per second
+
+GET: 41954.55====== GET ======
+  10000 requests completed in 0.22 seconds
+  50 parallel clients
+  1000 bytes payload
+  keep alive: 1
+
+48.54% <= 1 milliseconds
+89.88% <= 2 milliseconds
+100.00% <= 3 milliseconds
+45045.04 requests per second
+
+
+used_memory:2592144880
+SET: -nan====== SET ======
+  10000 requests completed in 0.24 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+53.25% <= 1 milliseconds
+89.46% <= 2 milliseconds
+100.00% <= 3 milliseconds
+42372.88 requests per second
+
+GET: 30333.33GET: 37465.65====== GET ======
+  10000 requests completed in 0.27 seconds
+  50 parallel clients
+  5000 bytes payload
+  keep alive: 1
+
+38.69% <= 1 milliseconds
+80.36% <= 2 milliseconds
+99.98% <= 3 milliseconds
+100.00% <= 3 milliseconds
+37453.18 requests per second
+
+
+used_memory:2592169944
