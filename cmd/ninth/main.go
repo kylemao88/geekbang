@@ -2,6 +2,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"encoding/binary"
 	"fmt"
@@ -87,7 +88,28 @@ func NewImDecoder(buff string) imdecoder {
 func getBuffFromSocket() string {
 	var buff string = ""
 	// ....
-	return buff
+
+	buf := new(bytes.Buffer)
+	// scanner
+	scanner := bufio.NewScanner(buf)
+	scanner.Split(func(data []byte, atEOF bool) (advance int, token []byte, err error) {
+		if !atEOF {
+			if len(data) > 4 { // 如果收到的数据>4个字节(2字节版本号+2字节数据包长度)  //packagelen
+				length := int32(0)
+				binary.Read(bytes.NewReader(data[0:4]), binary.BigEndian, &length)
+				if int(length)+12 <= len(data) {
+					return int(length) + 12, data[:int(length)+12], nil
+				}
+			}
+		}
+		return
+	})
+
+	for scanner.Scan() {
+		buff = string(scanner.Bytes())
+		return buff
+	}
+	return ""
 }
 
 //字节数(大端)组转成int(无符号的)
